@@ -1,6 +1,5 @@
 cifar-10-python/*
 log/*
-images/*
 extra_stats/*
 stats/*
 model/*

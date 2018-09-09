@@ -3,6 +3,7 @@ log/*
 extra_stats/*
 stats/*
 model/*
+desktop_plots/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

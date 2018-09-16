@@ -2,6 +2,26 @@
 An attempt to improve the global coherency of generations.
 
 ### Experiments:
+###### Train, Test and (SNGAN) Generated Images 
+
+### Encoded Representations: SNGAN vs VAE
+
+##### SNGAN:
+<img src=https://github.com/sudeepkatakol/SemanticSNGAN/blob/master/desktop_plots/SNGAN_Combined_tsne.png />
+<img src=https://github.com/sudeepkatakol/SemanticSNGAN/blob/master/desktop_plots/SNGAN_train_tsne.png />
+<img src=https://github.com/sudeepkatakol/SemanticSNGAN/blob/master/desktop_plots/SNGAN_test_tsne.png />
+<img src=https://github.com/sudeepkatakol/SemanticSNGAN/blob/master/desktop_plots/SNGAN_generated_tsne.png />
+
+##### VAE:
+###### Same Architecture
+
+<img src=https://github.com/sudeepkatakol/SemanticSNGAN/blob/master/desktop_plots/VAE_Combined_tsne.png />
+<img src=https://github.com/sudeepkatakol/SemanticSNGAN/blob/master/desktop_plots/VAE_train_tsne.png />
+<img src=https://github.com/sudeepkatakol/SemanticSNGAN/blob/master/desktop_plots/VAE_test_tsne.png />
+<img src=https://github.com/sudeepkatakol/SemanticSNGAN/blob/master/desktop_plots/VAE_generated_tsne.png />
+
+
+
 #### Local coherency:
 ###### Swap 'factor' adjacent columns and measure the change in discriminator output.
 

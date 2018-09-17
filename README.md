@@ -1,19 +1,71 @@
 # SemanticSNGAN
 An attempt to improve the global coherency of generations.
+- [SemanticSNGAN](#semanticsngan)
+  * [SNGAN Training](#sngan-training)
+    + [Inception Scores](#inception-scores)
+      - [5000 Samples](#5000-samples)
+      - [10000 Samples](#10000-samples)
+  * [Experiments](#experiments)
+    + [Encoded Representations](#encoded-representations)
+      - [SNGAN](#sngan)
+      - [VAE](#vae)
+    + [Coherency](#coherency)
+      - [Local coherency](#local-coherency)
+      - [Global coherency](#global-coherency)
+        * [TRAIN](#train)
+          + [Local](#local)
+          + [Global](#global)
+        * [TEST](#test)
+          + [Local](#local-1)
+          + [Global](#global-1)
+        * [GENERATED](#generated)
+          + [Local](#local-2)
+          + [Global](#global-2)
 
-### Experiments:
-###### Train, Test and (SNGAN) Generated Images 
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
-### Encoded Representations: SNGAN vs VAE
 
-##### SNGAN:
+## SNGAN Training
+
+<img src=https://github.com/sudeepkatakol/SemanticSNGAN/blob/master/tf-SNDCGAN-master/Training%20Images/100000.png />
+
+### Inception Scores
+
+#### 5000 Samples
+|Iteration| Inception Score|
+|------|-----|
+10000| 4.477705001831055 	  +- 0.1237875446677208|
+20000| 5.79064416885376 	  +- 0.1632663607597351|
+30000|  6.127541542053223   +- 0.20145201683044434|
+40000 |  6.487113952636719 	+- 0.3289961516857147|
+50000 | 6.777251243591309 	+- 0.21267540752887726|
+60000 | 6.883315086364746 	+- 0.3300464451313019|
+70000 | 7.0580644607543945  +- 0.20164021849632263|
+80000 | 6.918496131896973 	+- 0.276136577129364|
+90000 | 6.973136901855469 	+- 0.25999584794044495|
+100000| 7.235245704650879 	+- 0.25336676836013794|
+
+#### 10000 Samples
+|Iteration| Inception Score|
+|------|-----|
+80000 | 7.06506872177124  +- 0.1578473299741745.
+90000 | 7.1522111892700195 +- 0.2032909244298935.
+100000 | 7.292139530181885 +- 0.2068527787923813.
+
+
+## Experiments
+Train, Test and (SNGAN) Generated Images 
+
+### Encoded Representations
+
+#### SNGAN
 <img src=https://github.com/sudeepkatakol/SemanticSNGAN/blob/master/desktop_plots/SNGAN_Combined_tsne.png />
 <img src=https://github.com/sudeepkatakol/SemanticSNGAN/blob/master/desktop_plots/SNGAN_train_tsne.png />
 <img src=https://github.com/sudeepkatakol/SemanticSNGAN/blob/master/desktop_plots/SNGAN_test_tsne.png />
 <img src=https://github.com/sudeepkatakol/SemanticSNGAN/blob/master/desktop_plots/SNGAN_generated_tsne.png />
 
-##### VAE:
-###### Same Architecture
+#### VAE
+Same Architecture
 
 <img src=https://github.com/sudeepkatakol/SemanticSNGAN/blob/master/desktop_plots/VAE_Combined_tsne.png />
 <img src=https://github.com/sudeepkatakol/SemanticSNGAN/blob/master/desktop_plots/VAE_train_tsne.png />
@@ -21,15 +73,15 @@ An attempt to improve the global coherency of generations.
 <img src=https://github.com/sudeepkatakol/SemanticSNGAN/blob/master/desktop_plots/VAE_generated_tsne.png />
 
 
+### Coherency
+#### Local coherency
+Swap 'factor' adjacent columns and measure the change in discriminator output.
 
-#### Local coherency:
-###### Swap 'factor' adjacent columns and measure the change in discriminator output.
+#### Global coherency
+Interchange patches of image and measure the change in dicriminator output.
+##### TRAIN
 
-#### Global coherency:
-###### Interchange patches of image and measure the change in dicriminator output.
-##### TRAIN:
-
-###### Local:
+###### Local
 |Factor|Error| Loss|
 |------|-----|-----|
 2| 1.2407807111740112 | 1.7711739540100098
@@ -41,7 +93,7 @@ An attempt to improve the global coherency of generations.
 32| 6.563145637512207 | 7.842253684997559
 
 
-###### Global:
+###### Global
 |Patch size|Error| Loss|
 |------|-----|-----|
 2| 1.233760952949524 |1.7134640216827393
@@ -50,9 +102,9 @@ An attempt to improve the global coherency of generations.
 16| 1.4115720987319946 |1.6655635833740234
 
 ------------------------------
-##### TEST:
+##### TEST
 
-###### Local:
+###### Local
 |Factor|Error| Loss|
 |------|-----|-----|
 2| 1.2032368183135986| 1.7107226848602295
@@ -63,7 +115,7 @@ An attempt to improve the global coherency of generations.
 16| 2.3913350105285645 | 3.119769334793091
 32| 7.208259582519531 | 8.087034225463867
 
-###### Global:
+###### Global
 |Patch size|Error| Loss|
 |------|-----|-----|
 2| 1.1856664419174194| 1.6796118021011353
@@ -72,9 +124,9 @@ An attempt to improve the global coherency of generations.
 16| 1.32599937915802| 1.8563122749328613
 
 ---------------------------------
-##### GENERATED:
+##### GENERATED
 
-###### Local:
+###### Local
 |Factor|Error| Loss|
 |------|-----|-----|
 2| 0.07725143846367316| 1.5875823851381272
@@ -85,7 +137,7 @@ An attempt to improve the global coherency of generations.
 16| 1.9303587317238755| 2.8163385614436858
 32| 7.043071914855084 |7.506414942042386
 
-###### Global:
+###### Global
 |Patch size|Error| Loss|
 |------|-----|-----|
 2| 0.1258577044087034| 1.5848842750990126

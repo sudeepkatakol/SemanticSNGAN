@@ -1,29 +1,18 @@
 # SemanticSNGAN
 An attempt to improve the global coherency of generations.
+
+## Table of Contents
 - [SemanticSNGAN](#semanticsngan)
   * [SNGAN Training](#sngan-training)
     + [Inception Scores](#inception-scores)
-      - [5000 Samples](#5000-samples)
-      - [10000 Samples](#10000-samples)
   * [Experiments](#experiments)
     + [Encoded Representations](#encoded-representations)
       - [SNGAN](#sngan)
       - [VAE](#vae)
     + [Coherency](#coherency)
-      - [Local coherency](#local-coherency)
-      - [Global coherency](#global-coherency)
         * [TRAIN](#train)
-          + [Local](#local)
-          + [Global](#global)
         * [TEST](#test)
-          + [Local](#local-1)
-          + [Global](#global-1)
         * [GENERATED](#generated)
-          + [Local](#local-2)
-          + [Global](#global-2)
-
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
 
 ## SNGAN Training
 

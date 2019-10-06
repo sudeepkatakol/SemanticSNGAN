@@ -65,11 +65,13 @@ Same Architecture
 ### Coherency
 #### Local coherency
 Swap 'factor' adjacent columns and measure the change in discriminator output.
+<img src=https://github.com/sudeepkatakol/SemanticSNGAN/blob/master/plots/Local%20behavior.png/>
 
 #### Global coherency
 Interchange patches of image and measure the change in dicriminator output.
-##### TRAIN
+<img src=https://github.com/sudeepkatakol/SemanticSNGAN/blob/master/plots/Global%20behavior.png/>
 
+##### TRAIN
 ###### Local
 |Factor|Error| Loss|
 |------|-----|-----|
